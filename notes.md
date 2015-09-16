@@ -289,3 +289,6 @@ Magic:Behind the scenes, Meteor is wiring up observe() callbacks for us, and re-
         return Errors.find();
       }
     });
+###Creating errors
+- use the Session to store a postSubmitErrors object containing any potential error message.
+- initialize the object whenever the postSubmit template is createdm
