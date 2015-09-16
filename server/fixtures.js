@@ -4,11 +4,11 @@ if (Posts.find().count() === 0) {
 
   // create two users
   var joeId = Meteor.users.insert({
-    profile: { name: 'Joe Smith' }
+    profile: { name: 'joe Coleman' }
   });
   var joe = Meteor.users.findOne(joeId);
   var janeId = Meteor.users.insert({
-    profile: { name: 'Jane Smith' }
+    profile: { name: 'jane Greif' }
   });
   var jane = Meteor.users.findOne(janeId);
 
@@ -17,7 +17,8 @@ if (Posts.find().count() === 0) {
     userId: jane._id,
     author: jane.profile.name,
     url: 'http://janegreif.com/introducing-telescope/',
-    submitted: new Date(now - 7 * 3600 * 1000)
+    submitted: new Date(now - 7 * 3600 * 1000),
+    commentsCount: 2
   });
 
   Comments.insert({
@@ -41,7 +42,8 @@ if (Posts.find().count() === 0) {
     userId: joe._id,
     author: joe.profile.name,
     url: 'http://meteor.com',
-    submitted: new Date(now - 10 * 3600 * 1000)
+    submitted: new Date(now - 10 * 3600 * 1000),
+    commentsCount: 0
   });
 
   Posts.insert({
@@ -49,7 +51,7 @@ if (Posts.find().count() === 0) {
     userId: joe._id,
     author: joe.profile.name,
     url: 'http://themeteorbook.com',
-    submitted: new Date(now - 12 * 3600 * 1000)
+    submitted: new Date(now - 12 * 3600 * 1000),
+    commentsCount: 0
   });
 }
-// load up three posts whenever the server starts, as long as the Posts collection is empty:
