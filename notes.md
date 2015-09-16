@@ -194,4 +194,9 @@
   - ian:accounts-ui-bootstrap-3, meteor add accounts-password
     - Those two commands make the special accounts templates avaliable
     - {{> loginButtons align="right"}}
-    - 
+    -
+#Chp 8 Creating Posts
+
+#Chp 9 Editing Posts
+
+#Chp 10 Errors
