@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Discover-meteor : ">
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
 
-    <title>Discover-meteor</title>
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Discover-meteor by weberl48</title>
   </head>
 
   <body>
+    <a id="forkme_banner" href="https://github.com/weberl48/Discover-Meteor">View on GitHub</a>
+    <div class="shell">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/weberl48/Discover-Meteor">View on GitHub</a>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Discover-meteor</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-          <h1 id="project_title">Discover-meteor</h1>
-          <h2 id="project_tagline"></h2>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/weberl48/Discover-Meteor/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/weberl48/Discover-Meteor/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/weberl48/Discover-Meteor/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/weberl48/Discover-Meteor/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
         <h1>
-<a id="webdev-db" class="anchor" href="#webdev-db" aria-hidden="true"><span class="octicon octicon-link"></span></a>WebDev DB</h1>
-
-<p><a href="http://webdevdb.meteor.com/">http://webdevdb.meteor.com/</a></p>
-
-<p>#Chp 1 Intro</p>
+<a id="chp-1-intro" class="anchor" href="#chp-1-intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chp 1 Intro</h1>
 
 <ul>
 <li>code in the /server directory only runs on the server.</li>
@@ -56,14 +67,10 @@
 <li>no matter where you put your code meteor will find it and compile it</li>
 <li>no need to manually write include paths for javascript or css Files</li>
 <li> postList attribute used by Meteor to keep track of what template goes where
-###Spacebars
-
-<ul>
+###Spacebars</li>
 <li>meteors templating system,</li>
 <li>html with addition of inclusions, expressions and block helpers.</li>
 <li>inclusion: {{&gt; templateName}}, tells meteor to replace the {{&gt; inclusion}} with the template whos name corresponds.</li>
-</ul>
-</li>
 </ul>
 
 <h3>
@@ -84,12 +91,13 @@
 <h3>
 <a id="template-helpers" class="anchor" href="#template-helpers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Template Helpers:</h3>
 
-<pre><code>- Meteor keeps templates and their logic separated
-- in order to come to like a template needs helpers
-- prepare raw data
-- similar to controllers but have a slightly different role
-- while the template's role is limited to displaying or looping over variables, the helpers are the one who actually do the heavy lifting by assigning a value to each variable.
-</code></pre>
+<ul>
+<li>Meteor keeps templates and their logic separated</li>
+<li>in order to come to like a template needs helpers</li>
+<li>prepare raw data</li>
+<li>similar to controllers but have a slightly different role</li>
+<li>while the template's role is limited to displaying or looping over variables, the helpers are the one who actually do the heavy lifting by assigning a value to each variable.</li>
+</ul>
 
 <ul>
 <li>the {{#each}} block helper not only iterates, it also sets the value of "this" inside the block to the iterated object.</li>
@@ -101,57 +109,51 @@
 <h3>
 <a id="collection" class="anchor" href="#collection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collection:</h3>
 
-<pre><code>- core feature of meteor is the automatic synchronisation of data between client and server.
-- collection is a special data structure that takes care of storing your data in MongoDB
-- synchronising data with each connected user's browser in real time
-- place collection in lib directory to make sure they are defined first
-</code></pre>
+<ul>
+<li>core feature of meteor is the automatic synchronisation of data between client and server.</li>
+<li>collection is a special data structure that takes care of storing your data in MongoDB</li>
+<li>synchronising data with each connected user's browser in real time</li>
+<li>place collection in lib directory to make sure they are defined first</li>
+</ul>
 
 <h3>
 <a id="storing-data" class="anchor" href="#storing-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Storing Data:</h3>
 
-<pre><code>- Browser Memory: data local to the current browser tab, not permanent (Javascript Variables)
-
-- Browser Storage: cookies or local storage. local to current user but available across all tabs
-
-- Server-side database: stores permanent data. Available to more than one user
-</code></pre>
+<ul>
+<li><p>Browser Memory: data local to the current browser tab, not permanent (Javascript Variables)</p></li>
+<li><p>Browser Storage: cookies or local storage. local to current user but available across all tabs</p></li>
+<li>
+<p>Server-side database: stores permanent data. Available to more than one user</p>
 
 <h3>
 <a id="client--server" class="anchor" href="#client--server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Client &amp; Server:</h3>
-
-<pre><code>- code not place inside client or server folders will run in both contexts.
-- collections are available to both client and server
-- server side collection has the job of talking to the MongoDB database
-- client side collection is a copy of a subset of the real, canonical collection.   
-</code></pre>
-
-<h3>
-<a id="server-side-collections" class="anchor" href="#server-side-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server-Side Collections:</h3>
-
-<pre><code>- acts as an API into MongoDB
-- write Mongo commands like Collection.insert()
-</code></pre>
+</li>
+<li>code not place inside client or server folders will run in both contexts.</li>
+<li>collections are available to both client and server</li>
+<li>server side collection has the job of talking to the MongoDB database</li>
+<li>client side collection is a copy of a subset of the real, canonical collection.<br>
+###Server-Side Collections:</li>
+<li>acts as an API into MongoDB</li>
+<li>write Mongo commands like Collection.insert()</li>
+</ul>
 
 <h3>
 <a id="mongo" class="anchor" href="#mongo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mongo:</h3>
 
-<pre><code>- sccess your deployed app's Mongo shell with "meteor mongo myApp".
-</code></pre>
+<ul>
+<li>sccess your deployed app's Mongo shell with "meteor mongo myApp".</li>
+</ul>
 
 <h3>
 <a id="client-side-collections" class="anchor" href="#client-side-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Client-Side Collections:</h3>
 
-<pre><code>- Posts = new Mongo.Collection('posts') client side is a local, in-browser cache of the real Mongo collection.
-- cache is a subset of data for quick access
-- documents stored in browser Memory
-</code></pre>
-
-<h3>
-<a id="minimongo" class="anchor" href="#minimongo" aria-hidden="true"><span class="octicon octicon-link"></span></a>MiniMongo:</h3>
-
-<pre><code>- Meteor's client-side Mongo implementation
-</code></pre>
+<ul>
+<li>Posts = new Mongo.Collection('posts') client side is a local, in-browser cache of the real Mongo collection.</li>
+<li>cache is a subset of data for quick access</li>
+<li>documents stored in browser Memory
+###MiniMongo:</li>
+<li>Meteor's client-side Mongo implementation</li>
+</ul>
 
 <h3>
 <a id="flow" class="anchor" href="#flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flow:</h3>
@@ -162,27 +164,21 @@
 <h3>
 <a id="find--fetch" class="anchor" href="#find--fetch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Find &amp; Fetch:</h3>
 
-<pre><code>- find() returns a cursor, which is a reactive data source.
-- use fetch() on that cursor to transform it into an array .
-</code></pre>
+<ul>
+<li>find() returns a cursor, which is a reactive data source.</li>
+<li>use fetch() on that cursor to transform it into an array .</li>
+</ul>
 
 <h3>
 <a id="connecting-collections-publications-and-subscriptions" class="anchor" href="#connecting-collections-publications-and-subscriptions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connecting Collections: Publications and Subscriptions</h3>
 
-<pre><code>- autopublish package not intended for production applications
-- autopublish says that each collection should be shared in its entirety to each connected client.
-- "meteor remove autopublish"
-</code></pre>
-
-<h1>
-<a id="chp-5-publications-and-subscriptions" class="anchor" href="#chp-5-publications-and-subscriptions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chp 5 Publications and Subscriptions</h1>
-
-<p>Publications and subscriptions are one of the most fundamental and important concepts in Meteor</p>
-
-<h2>
-<a id="magic" class="anchor" href="#magic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Magic</h2>
-
 <ul>
+<li>autopublish package not intended for production applications</li>
+<li>autopublish says that each collection should be shared in its entirety to each connected client.</li>
+<li>"meteor remove autopublish"
+#Chp 5 Publications and Subscriptions
+Publications and subscriptions are one of the most fundamental and important concepts in Meteor
+## Magic</li>
 <li>Misunderstandings:
 
 <ul>
@@ -190,10 +186,14 @@
 <li>Meteor apps can't deal with large amounts of data</li>
 </ul>
 </li>
-<li>magic is ultimately very useful, it can obscure
--
-###The Olden Days (2011)
-####Rails Example:
+<li>magic is ultimately very useful, it can obscure</li>
+</ul>
+
+<h3>
+<a id="the-olden-days-2011" class="anchor" href="#the-olden-days-2011" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Olden Days (2011)</h3>
+
+<h4>
+<a id="rails-example" class="anchor" href="#rails-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rails Example:</h4>
 
 <ul>
 <li>browser sends a request to your app, which is living on the server</li>
@@ -206,8 +206,6 @@
 <li>instead of sending HTML code to the client, Meteor will send that actual data (data on the wire)</li>
 <li>access and even modify that data instantaneously
 ###Publishing</li>
-</ul>
-</li>
 <li>a way of telling Meteor which subset of data can be sent to the client</li>
 <li>a funnel that transfers data from a server-side (source) collection to a client-side (target) collection.</li>
 <li>protocol used DDP (Distributed Data Protocol).
@@ -218,15 +216,10 @@
 <li>by default autopublish package enabled</li>
 <li>mirroring all data from the server on the client</li>
 <li>Data is ubiquitous</li>
+<li>not for production use
+### Magic</li>
 <li>
-<p>not for production use</p>
-
-<h3>
-<a id="magic-1" class="anchor" href="#magic-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Magic</h3>
-
-<ul>
-<li>publishCursor() if you return a cursor (i.e. Posts.find({'author':'Tom'})) in a publish function</li>
-</ul>
+<p>publishCursor() if you return a cursor (i.e. Posts.find({'author':'Tom'})) in a publish function</p>
 
 <p>publishCursor() does:</p>
 </li>
@@ -288,7 +281,7 @@
 </ul>
 
 <h3>
-<a id="magic-2" class="anchor" href="#magic-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Magic</h3>
+<a id="magic" class="anchor" href="#magic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Magic</h3>
 
 <ul>
 <li>Iron Router comes with a built-in way to delay showing a template until the route calling it is ready, and show a loading template instead
@@ -299,18 +292,15 @@ layoutTemplate: 'layout',
 loadingTemplate: 'loading',
 waitOn: function() { return Meteor.subscribe('posts'); }
 });</li>
-<li>wait on the subscription. prevents page from loading until subscription is ready</li>
 </ul>
 </li>
-</ul>
-
-<ul>
+<li><p>wait on the subscription. prevents page from loading until subscription is ready</p></li>
 <li><p>spin package: animated loading spinner {{&gt;spinner}}</p></li>
 <li>
 <p>wait on your subscriptions, not just for the user experience, but also because it means you can safely assume that data will always be available from within a template.</p>
 
 <h3>
-<a id="magic-3" class="anchor" href="#magic-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Magic</h3>
+<a id="magic-1" class="anchor" href="#magic-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Magic</h3>
 </li>
 <li>Reactivity: how does the router know when to redirect the user back to the right page once the data comes through?</li>
 </ul>
@@ -327,7 +317,7 @@ waitOn: function() { return Meteor.subscribe('posts'); }
 
 <ul>
 <li>{{#with myWidget}}
-{{&gt; widgetPage}}
+  {{&gt; widgetPage}}
 {{/with}}</li>
 </ul>
 </li>
@@ -346,7 +336,9 @@ waitOn: function() { return Meteor.subscribe('posts'); }
 
 <ul>
 <li>when someone enters a wrong url Iron Router takes care of this for us through the notFoundTemplate option.</li>
-<li>set up a new template to show a simple 404 error message</li>
+<li>set up a new template to show a simple 404 error message
+
+<ul>
 <li>Router.configure({
 layoutTemplate: 'layout',
 loadingTemplate: 'loading',
@@ -355,38 +347,162 @@ waitOn: function() { return Meteor.subscribe('posts'); }
 });
 #Chp 7 Adding Users
 ###Accounts: users made simple</li>
-<li>Thanks to the way Meteor packages can contribute code on both the server (JavaScript) and client (JavaScript, HTML, and CSS) side, we can get an accounts system almost for free</li>
-<li>ian:accounts-ui-bootstrap-3, meteor add accounts-password
+</ul>
+</li>
+<li><p>Thanks to the way Meteor packages can contribute code on both the server (JavaScript) and client (JavaScript, HTML, and CSS) side, we can get an accounts system almost for free</p></li>
+<li>
+<p>Meteor deals with OAuth and Bcrypt for you</p>
+
+<ul>
+<li>meteor add ian:accounts-ui-bootstrap-3
+meteor add accounts-password
 
 <ul>
 <li>Those two commands make the special accounts templates avaliable</li>
 </ul>
+</li>
+</ul>
+</li>
+<li>{{&gt; loginButtons align="right"}} is used to access the accounts templates and provide a login form
 
-<h2>
-<a id="---loginbuttons-alignright" class="anchor" href="#---loginbuttons-alignright" aria-hidden="true"><span class="octicon octicon-link"></span></a>- {{&gt; loginButtons align="right"}}</h2>
+<ul>
+<li> use these to sign up, log in, request a change of password</li>
+</ul>
+</li>
+<li>to login via username:
+Accounts.ui.config({
+  passwordSignupFields: 'USERNAME_ONLY'
+});
+###Creating First User</li>
+<li>accounts package creates a special new collection<br>
+  Meteor.users.findOne()
+  returns a user object with a unique id</li>
+<li>browser will only hold information on logged in user(autopublish)</li>
+<li>accounts package  does "auto-publish" the currently logged in user's basic account details no matter what</li>
+<li>accounts package only publishes the current user</li>
+<li>a local collection can be a secure subset of the real database
+##Reactivity</li>
+<li>meteors core feature</li>
+<li>do not have to manually check for data changes via AJAX call</li>
+<li>in meteor data changes come in at real time and get applied to the UI seamlessly</li>
+<li>computations: a block of code that runs every time one of the reactive data sources it depends on changes</li>
+<li>reactivity at its core is a declarative approach.</li>
+<li>declarative approach:
 
-<h1>
-<a id="chp-8-creating-posts" class="anchor" href="#chp-8-creating-posts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chp 8 Creating Posts</h1>
+<ul>
+<li>lets us define the relationship between objects once and know they'll be kept in sync</li>
+<li>meteor takes care of keeping the user interface up to date
+Instead of observe callbacks:
+
+  <ul>
+{{#each posts}}
+  <li>{{title}}</li>
+    {{/each}}
+  </ul>
+
+Get list of posts:
+Template.postsList.helpers({
+  posts: function() {
+    return Posts.find();
+  }
+});
+Magic:Behind the scenes, Meteor is wiring up observe() callbacks for us, and re-drawing the relevant sections of HTML when the reactive data changes.</li>
+</ul>
 </li>
 </ul>
 
 <h1>
-<a id="chp-9-editing-posts" class="anchor" href="#chp-9-editing-posts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chp 9 Editing Posts</h1>
+<a id="chp-8-creating-posts" class="anchor" href="#chp-8-creating-posts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chp 8 Creating Posts</h1>
+
+<ul>
+<li>create post via console MiniMongo Posts.insert</li>
+<li>Post Page Route: Router.route('/submit', {name: 'postSubmit'});</li>
+<li>Link Post Page: </li>
+<li><a href="%7B%7BpathFor%20'postSubmit'%7D%7D">Submit Post</a></li>
+<li>/submit URL: Meteor will display the postSubmit template
+###Creating Posts</li>
+<li>bind an event handler to the form submit event
+
+<ul>
+<li>Template.postSubmit.events({})</li>
+</ul>
+</li>
+<li>data security is build into Meteor collections
+
+<ul>
+<li>meteor remove insecure</li>
+</ul>
+</li>
+<li>Posts.allow: tells meteor this is a set of circumstances under which clients are allowed to do things to the Posts collection
+###Securing Access To The New Post Form</li>
+<li>preventing logged out users from seeing the post submit form by defining a route hook</li>
+<li>A hook intercepts the routing process and potentially changes the action that the router takes. ( security guard that checks your credentials )
+
+<ul>
+<li>var requireLogin = function() {
+  if (! Meteor.user()) {
+    this.render('accessDenied');
+  } else {
+    this.next();
+  }
+}<br>
+Router.onBeforeAction(requireLogin, {only: 'postSubmit'});</li>
+</ul>
+</li>
+<li>routing hooks are reactive , no need for callbacks</li>
+<li>currentUser helper is provided to us by the accounts package and is the Spacebars equivalent of Meteor.user()
+###Meteor Method: Better Abstraction and Security</li>
+<li>better to keep our event handlers simple and, if we are doing more than the most basic inserts or updates to collections, use a Method.</li>
+<li>Meteor Method is a server-side function that is called client-side.</li>
+<li>Collection's insert, update and remove functions are all Methods</li>
+<li>Meteor.call function calls a Method named by its first argument.</li>
+<li>Meteor method callbacks always have two arguments, error and result
+###Security Check
+####audit-argument-checks package</li>
+<li>check any JavaScript object against a predefined pattern</li>
+<li>use it to check that the user calling the method is properly logged in (by making sure that Meteor.userId() is a String), and that the postAttributes object being passed as argument to the method contains title and url strings</li>
+<li>.extend() method is part of the Underscore library, and simply lets you “extend” one object with the properties of another.</li>
+</ul>
 
 <h1>
 <a id="chp-10-errors" class="anchor" href="#chp-10-errors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chp 10 Errors</h1>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Discover-meteor maintained by <a href="https://github.com/weberl48">weberl48</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+<h3>
+<a id="introducing-local-collections" class="anchor" href="#introducing-local-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introducing Local Collections</h3>
+
+<ul>
+<li>create a collection to store our errors in</li>
+<li>errors are only relevant to the current session and don't need to be persistent in any way. Use a local Collection</li>
+<li>local collection: means is that the Errors collection will only exist in the browser, and will make no attempt to synchronize back to the server.</li>
+<li>create the error inside the client directory, with its MongoDB collection name set to null</li>
+<li>advantage of using a local collection to store the errors is reactively displaying errors
+###Displaying Errors</li>
+<li>{{&gt; errors}} display errors template</li>
+<li>template:{{#each errors}}
+  {{&gt; error}}
+{{/each}}</li>
+<li>helper:Template.errors.helpers({
+      errors: function() {
+    return Errors.find();
+  }
+});</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/weberl48">weberl48</a> can be found on <a href="https://github.com/weberl48/Discover-Meteor">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
+
     </div>
 
     
-
   </body>
 </html>
