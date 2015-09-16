@@ -142,10 +142,23 @@
  - iron router take over what renders inside the <body> tag
  - {{> yield}}
   - dynamic zone that will automatically render whichever template corresponds to the current route
+
 ### Named Routes
  - by default Iron Router will look for a template with the same name as the route name
  - will infer name from path
  - Naming routes lets us use Iron Router features for building links inside app
  - {{pathFor}} Spacebars helper returns the URL path component of any route
  - <a class="navbar-brand" href="{{pathFor 'postsList'}}">PostList</a>
- 
+
+###Magic
+  - Iron Router comes with a built-in way to delay showing a template until the route calling it is ready, and show a loading template instead
+    - Router.configure({
+  layoutTemplate: 'layout',
+  loadingTemplate: 'loading',
+  waitOn: function() { return Meteor.subscribe('posts'); }
+});
+- wait on the subscription. prevents page from loading until subscription is ready
+
+- spin package: animated loading spinner {{>spinner}}
+
+- wait on your subscriptions, not just for the user experience, but also because it means you can safely assume that data will always be available from within a template.
