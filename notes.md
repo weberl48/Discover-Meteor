@@ -188,3 +188,10 @@
     notFoundTemplate: 'notFound',
     waitOn: function() { return Meteor.subscribe('posts'); }
 });
+#Chp 7 Adding Users
+###Accounts: users made simple
+  - Thanks to the way Meteor packages can contribute code on both the server (JavaScript) and client (JavaScript, HTML, and CSS) side, we can get an accounts system almost for free
+  - ian:accounts-ui-bootstrap-3, meteor add accounts-password
+    - Those two commands make the special accounts templates avaliable
+    - {{> loginButtons align="right"}}
+    - 
