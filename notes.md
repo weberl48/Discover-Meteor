@@ -162,3 +162,16 @@
 - spin package: animated loading spinner {{>spinner}}
 
 - wait on your subscriptions, not just for the user experience, but also because it means you can safely assume that data will always be available from within a template.
+###Magic
+- Reactivity: how does the router know when to redirect the user back to the right page once the data comes through?
+
+### Routing to A Specific Path
+  - :id syntax tells the router to match any route of the form /posts/xyz/
+  - Second, to put whatever it finds in this “xyz” spot inside an id property in the router's params array.
+### Data context
+  - By setting a template's data context, you can control the value of "this" inside template helpers.
+  - {{#with}} take this object, and apply the following template to it
+    - {{#with myWidget}}
+        {{> widgetPage}}
+      {{/with}}
+  - 
