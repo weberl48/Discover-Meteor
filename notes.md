@@ -174,4 +174,17 @@
     - {{#with myWidget}}
         {{> widgetPage}}
       {{/with}}
-  - 
+
+###HTML5 pushState
+  - URL changes are happening using HTML5 pushState.
+  - Router picks up clicks on URLs that are internal to the site, and prevents the browser from browsing away from the app, instead just making the necessary changes to the app's state.
+
+###Post Not Found
+  - when someone enters a wrong url Iron Router takes care of this for us through the notFoundTemplate option.
+  - set up a new template to show a simple 404 error message
+  - Router.configure({
+    layoutTemplate: 'layout',
+    loadingTemplate: 'loading',
+    notFoundTemplate: 'notFound',
+    waitOn: function() { return Meteor.subscribe('posts'); }
+});
